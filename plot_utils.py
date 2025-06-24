@@ -4,7 +4,10 @@ import jieba
 from collections import Counter
 import os
 import pandas as pd 
+from data_utils import load_stopwords
 plt.rcParams['font.sans-serif'] = ['SimHei']
+
+stopwords = load_stopwords()
 
 
 def generate_wordcloud(df,output_path, text_column='msg'):

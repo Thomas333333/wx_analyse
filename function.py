@@ -9,7 +9,7 @@ def function(df,talker_name,user_info):
 
     # 每个人说了多少话
     user_talk_time_dict = count_talk_times(df)
-    mapping_dict = {k: (user_info[k]['nickname']+'('+user_info[k]['remark']+')') for k, v in user_talk_time_dict.items()}
+    mapping_dict = {k: (user_info[k]['nickname']+'-'+user_info[k]['remark']) for k, v in user_talk_time_dict.items()}
     # print(mapping_dict)
 
     final_dict = {mapping_dict[k]: v for k, v in user_talk_time_dict.items()}
@@ -18,10 +18,10 @@ def function(df,talker_name,user_info):
     print('\n')
 
     #各自说的最多的词云
-    save_path = talker_name +'/each_user_wordcloud/'
-    os.makedirs(save_path, exist_ok=True)
-    for user,id in mapping_dict.items():
-        generate_wordcloud(df[df['talker']==user], save_path+id,text_column='msg')
+    # save_path = talker_name +'/each_user_wordcloud/'
+    # os.makedirs(save_path, exist_ok=True)
+    # for user,id in mapping_dict.items():
+    #     generate_wordcloud(df[df['talker']==user], save_path+id,text_column='msg')
 
    
     # 统计每年、每月、每天、每小时的总消息数和平均消息数，此外还有按照时间顺序画出每年每月的消息总数的条形图
@@ -39,7 +39,6 @@ def function(df,talker_name,user_info):
 
 if __name__ == "__main__":
     #ready
-    stopwords = load_stopwords()
     directory_path = r"    "
     merge_csv_file_path = directory_path+ '\merged_output.csv'
     user_info  = read_user_json(directory_path)
