@@ -18,10 +18,10 @@ def function(df,talker_name,user_info):
     print('\n')
 
     #各自说的最多的词云
-    # save_path = talker_name +'/each_user_wordcloud/'
-    # os.makedirs(save_path, exist_ok=True)
-    # for user,id in mapping_dict.items():
-    #     generate_wordcloud(df[df['talker']==user], save_path+id,text_column='msg')
+    save_path = talker_name +'/each_user_wordcloud/'
+    os.makedirs(save_path, exist_ok=True)
+    for user,id in mapping_dict.items():
+        generate_wordcloud(df[df['talker']==user], save_path+str(id)+'.png',text_column='msg')
 
    
     # 统计每年、每月、每天、每小时的总消息数和平均消息数，此外还有按照时间顺序画出每年每月的消息总数的条形图
