@@ -1,4 +1,6 @@
 # wx_analyse
+
+微信消息记录分析
 ## 介绍
 根据消息记录完成一些基本的数据分析，具体如下
 ## 效果
@@ -15,7 +17,7 @@
 6.总聊天记录的词云分析（两个人一起的高频词）
 
 ## 使用方式
-1.使用项目`PyWxDump`导以csv格式导出自己微信的聊天记录，并记住导出文件夹路径，比如`D:\...\wxdump_work\export\wxid...\csv\wxid...`
+1.使用项目[PyWxDump](https://github.com/xaoyaoo/PyWxDump)以csv格式导出自己微信的聊天记录，并记住导出文件夹路径，比如`D:\...\wxdump_work\export\wxid...\csv\wxid...`
 
 2.克隆本项目
 ```
